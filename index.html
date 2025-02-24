@@ -1,30 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Houms  |  Homepage</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidhbali Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-<header>
-  <h1>Houms</h1>
-  <div>
-    Welcome to Houms, where finding your perfect home is easy. <br>Whether it's your first home or your next move, <br> We offer a range of properties to fit your needs with expert guidance every step of the way.
-  </div>
-  <a href="#contact" class="btn">Learn More</a>
-</header>
 
-<section id="contact">
-  <h2>Schedule a Viewing</h2>
-  <form id="contact-form">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="logo">Sidhbali Hospital</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<script src="script.js"></script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Health, Our Priority</h2>
+            <p>Providing quality healthcare with compassion and excellence.</p>
+            <a href="#contact" class="btn">Book an Appointment</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-cards">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To deliver <strong>affordable, patient-centered healthcare</strong> by combining advanced medical technology with personalized treatment.</p>
+            </div>
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To be a leading healthcare provider, known for excellence in medical care, patient satisfaction, and innovation in the healthcare industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Specialties</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>🏥 Cardiology</h3>
+                <p>Comprehensive heart care & advanced treatments.</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Neurology</h3>
+                <p>Brain & nervous system expertise.</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Orthopedics</h3>
+                <p>Advanced bone & joint care.</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Pediatrics</h3>
+                <p>Specialized care for infants and children.</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Maternity & Gynecology</h3>
+                <p>Safe & comfortable childbirth and women’s health.</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Oncology</h3>
+                <p>Cancer diagnosis and treatment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Sidhbali Hospital. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
