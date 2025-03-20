@@ -3,94 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidhbali Hospital</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap">
+    <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header class="header">
-        <h1 class="logo">Sidhbali Hospital</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
+    <header></header>
+    <div class="wishlist-drawer">
+        <h2>Your Wishlist ( <span id="wishlistCount">0</span> )</h2>
+    </div>
     <section class="hero">
-        <div class="hero-content">
-            <h2>Your Health, Our Priority</h2>
-            <p>Providing quality healthcare with compassion and excellence.</p>
-            <a href="#contact" class="btn">Book an Appointment</a>
+        <div >
+            <img src="jewelry-banner.png" alt="Jewelry Display">
+        </div>
+    </section> 
+
+    <section class="about-container">
+        <div class="story">
+            <div class="story-text">
+                <h2>Our Story</h2>
+                <p>
+                    Our story is one of passion, where every diamond is handpicked, every metal is ethereally shaped, and every design tells a unique story. 
+                    It's not just jewelry; it's an heirloom that carries the legacy of beauty across generations.
+                </p>
+                <a href="#">Read More <img src="Expand_right_light.png" alt="expand" class="expand"></a>
+            </div>
+            <div class="story-image">
+                <img src="our_story.png" alt="Jewelry Story">
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="about-image">
+                <img src="about_us.png" alt="Jewelry">
+            </div>
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    Amidst the sparkle and shimmer, our brand stands out with its commitment to capturing the essence of sophistication in every creation. 
+                    Each piece is a testament to timeless beauty, meticulously crafted to adorn moments that matter.
+                </p>
+                <a href="#">Read More <img src="Expand_right_light.png" alt="expand" class="expand"></a>
+            </div>
+        </div>
+    </section>   
+<section>
+   <div class="features-section">
+    <div class="feature">
+        <img src="design.png" alt="2500+ Unique Designs">
+        <p>2500+ Unique Designs</p>
+    </div>
+    <div class="feature">
+        <img src="Warranty.png" alt="Assured Warranty">
+        <p>Assured Warranty</p>
+    </div>
+    <div class="feature">
+        <img src="Celebrity.png" alt="Celebrity Favorite">
+        <p>Celebrity Favorite</p>
+    </div>
+    <div class="feature">
+        <img src="Assistance.png" alt="Video Calling Assistance">
+        <p>Video Calling Assistance</p>
+    </div>
+    <div class="feature">
+        <img src="Shipping.png" alt="Shipping Worldwide">
+        <p>Shipping Worldwide</p>
+    </div>
+</div>
+</section>
+
+<section>
+    <div class="product-section">
+        <div class="product-card">
+            <img src="1.png" alt="Product 1">
+            <p>Rosy Refresh - Set of 2 Emerald Diamond Rose Gold Ring</p>
+            <div class="price">
+                <span class="current-price">$599</span>
+                <span class="original-price">$699</span>
+                <span class="discount">($100 Off)</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="2.png" alt="Product 2">
+            <p>American Diamond Gold Plated Bracelet</p>
+            <div class="price">
+                <span class="current-price">$249</span>
+                <span class="original-price">$299</span>
+                <span class="discount">($50 Off)</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="3.png" alt="Product 3">
+            <p>Cubic Zirconia Diamond Gold Necklace & Earring Set</p>
+            <div class="price">
+                <span class="current-price">$999</span>
+                <span class="original-price">$1199</span>
+                <span class="discount">($200 Off)</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="4.png" alt="Product 4">
+            <p>Kundan Diamond Gold Plated Pandal & Earring Set</p>
+            <div class="price">
+                <span class="current-price">$1099</span>
+                <span class="original-price">$1249</span>
+                <span class="discount">($150 Off)</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="view-more">
+        <div class="line"></div>
+        <a href="shop.html"><button>View More</button></a>
+        <div class="line"></div>
+    </div>
+</section>
+
+<img src="SALE.png" alt="SALE" class="sale">
+
+<section id="category-section">
+    <img src="category.png" alt="Category" class="category">
+    <div class="category-container">
+        <!-- Card 1 -->
+        <div class="category-card">
+            <img src="earrings.png" alt="Earrings">
+            <h3>Earrings</h3>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="category-card">
+            <img src="finger-rings.png" alt="Finger Rings">
+            <h3>Finger Rings</h3>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="category-card">
+            <img src="pendants.png" alt="Pendants">
+            <h3>Pendants</h3>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="category-card">
+            <img src="nose-pins.png" alt="Nose Pins">
+            <h3>Nose Pins</h3>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="category-card">
+            <img src="chains.png" alt="Chains">
+            <h3>Chains</h3>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="category-card">
+            <img src="bracelets.png" alt="Bracelets">
+            <h3>Bracelets</h3>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="category-card">
+            <img src="bangles.png" alt="Bangles">
+            <h3>Bangles</h3>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="category-card">
+            <img src="neckwear.png" alt="Neckwear">
+            <h3>Neckwear</h3>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="category-card">
+            <img src="watch-jewelry.png" alt="Watch Jewelry">
+            <h3>Watch Jewelry</h3>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="category-card">
+            <img src="ankle-wear.png" alt="Ankle Wear">
+            <h3>Ankle Wear</h3>
+        </div>
+    </div>
+</section>
+
+
+    <div class="view-more">
+        <div class="line"></div>
+        <a href="shop.html"><button>View More</button></a>
+        <div class="line"></div>
+    </div>
+
+    
+    <section id="collection-section">
+        <img src="collection.png" alt="Collections" class="collections" >
+        <div class="collection-container">
+            <!-- Card 1 -->
+            <div class="collection-card">
+                <img src="diamonds.png" alt="Diamonds">
+            </div>
+            <!-- Card 2 -->
+            <div class="collection-card">
+                <img src="tales.png" alt="Tales Of Mystique">
+            </div>
+            <!-- Card 3 -->
+            <div class="collection-card">
+                <img src="joy.png" alt="Joy Of Dressing">
+            </div>
+            <!-- Card 4 -->
+            <div class="collection-card">
+                <img src="pretty.png" alt="Pretty In Pink">
+            </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <div class="about-cards">
-            <div class="card">
-                <h3>Our Mission</h3>
-                <p>To deliver <strong>affordable, patient-centered healthcare</strong> by combining advanced medical technology with personalized treatment.</p>
+
+    <div class="view-more">
+        <div class="line"></div>
+        <button>View More</button>
+        <div class="line"></div>
+    </div>
+
+    <img src="rings.png" alt="Rings" class="rings">
+
+    
+    <section id="gender-section">
+        <img src="gender.png" alt="Gender" class="gender">
+        <div class="gender-container">
+            <!-- Card 1 -->
+            <div class="gender-card">
+                <img src="men.png" alt="Men">
             </div>
-            <div class="card">
-                <h3>Our Vision</h3>
-                <p>To be a leading healthcare provider, known for excellence in medical care, patient satisfaction, and innovation in the healthcare industry.</p>
+            <!-- Card 2 -->
+            <div class="gender-card">
+                <img src="kids.png" alt="Kids">
+            </div>
+            <!-- Card 3 -->
+            <div class="gender-card">
+                <img src="women.png" alt="Wpmen">
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Our Specialties</h2>
-        <div class="service-cards">
-            <div class="card">
-                <h3>🏥 Cardiology</h3>
-                <p>Comprehensive heart care & advanced treatments.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Neurology</h3>
-                <p>Brain & nervous system expertise.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Orthopedics</h3>
-                <p>Advanced bone & joint care.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Pediatrics</h3>
-                <p>Specialized care for infants and children.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Maternity & Gynecology</h3>
-                <p>Safe & comfortable childbirth and women’s health.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Oncology</h3>
-                <p>Cancer diagnosis and treatment.</p>
-            </div>
-        </div>
-    </section>
+    <div class="view-more">
+        <div class="line"></div>
+        <button>View More</button>
+        <div class="line"></div>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
+    <img src="Tag.png" alt="Customer Love" class="tag">
+    <img src="Review.png" alt="Review" class="review">
+    <img src="featured.png" alt="Featured In" class="featured">
+    <img src="featured-1.png" alt="Featured In" class="featured-1">
+    <img src="featured-2.png" alt="Featured In" class="featured-2">
+    <img src="Features.png" alt="Features" class="features">
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Sidhbali Hospital. All rights reserved.</p>
-    </footer>
-
+    <footer></footer>
 </body>
 </html>

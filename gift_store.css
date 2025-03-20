@@ -1,0 +1,119 @@
+.gift{
+    width: 1540px;
+    height: 426px;
+    top: 161px;
+}
+
+.code{
+    width: 1177px;
+    height: 646.9999389648438px;
+    top: 637px;
+    left: 130px;
+    margin-top: 50px;
+}
+
+.occasion{
+    width: 1245px;
+    height: 66px;
+    top: 1334px;
+    left: 99px;
+    margin-top: 40px;
+}
+
+.occasion-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.occasion-card {
+    border-radius: 12px;
+    overflow: hidden;   
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 314.00006103515625px;
+    height: 407.18182373046875px;
+    top: 1440px;
+    left: 1097px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.occasion-card:hover {
+    transform: translateY(-5px);
+}
+
+view-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+    
+.line{
+    flex-grow: 0.2;
+    height: 1px;
+    background-color: #000;
+}
+.view-more button {
+    background-color: #d6f4f2;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+    
+.view-more button:hover {
+    background-color: #d1f0ed;
+}
+
+.gift-card{
+    width: 1540px;
+    height: 500px;
+    top: 1972px;
+    margin-bottom: 40px;
+}
+.special{
+    width: 1245px;
+    height: 66px;
+    top: 2522px;
+    left: 97px;
+}
+
+.special-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.special-card {
+    border-radius: 12px;
+    overflow: hidden;   
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 314.00006103515625px;
+    height: 407.18182373046875px;
+    top: 2628px;
+    left: 1095px;
+    
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.special-card:hover {
+    transform: translateY(-5px);
+}
+
+.talk{
+    width: 1540px;
+    height: 466px;
+    top: 3160px;
+
+}

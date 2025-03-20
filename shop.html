@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="shop.css" />
+    <script defer src="script.js"></script>
+    <title>Shop</title>
+</head>
+<body>
+    <header></header>
+    <div>
+      <img src="Bracelet-Collection.png" alt="Bracelet Collection" class="bracelet">
+    </div>
+
+
+    <div class="product-toolbar">
+        <div class="filter-section">
+            <button class="filter-btn">
+                <span class="filter">Filter </span> <img src="filter-icon.png" alt="Filter Icon">
+            </button>
+            <span class="divider"></span>
+            <div class="view-icons">
+                <button class="grid-icon">
+                    <img src="grid-icon.png" alt="Grid View">
+                </button>
+                <button class="list-icon">
+                    <img src="list-icon.png" alt="List View">
+                </button>
+            </div>
+        </div>
+    
+        <div class="product-count">
+            <span>657 products</span>
+        </div>
+        <span class="divider2"></span>
+        <div class="sort-section">
+            <span class="sort">Sort by:</span>
+            <div class="custom-dropdown">
+                <select class="sort-dropdown">
+                    <option>New Arrivals</option>
+                    <option selected>Trending Now</option>
+                    <option>Bestseller</option>
+                    <option>Rating - Highest</option>
+                    <option>Rating - Lowest</option>
+                    <option>Price Low to High</option>
+                    <option>Price High to Low</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="filter-panel">
+            <div class="filter-content">
+                <div class="filter-group">
+                    <div class="filter-title">Availability</div>
+                    <label><input type="checkbox" value="in-stock"> In Stock</label>
+                    <label><input type="checkbox" value="out-of-stock"> Out of Stock</label>
+                </div>
+    
+                <div class="filter-group">
+                    <div class="filter-title">Category</div>
+                    <label><input type="checkbox" value="ankle-wear"> Ankle Wear</label>
+                    <label><input type="checkbox" value="bangles"> Bangles</label>
+                    <label><input type="checkbox" value="bracelets"> Bracelets</label>
+                    <label><input type="checkbox" value="brooches"> Brooches</label>
+                    <label><input type="checkbox" value="chains"> Chains</label>
+                    <label><input type="checkbox" value="ear-cuffs"> Ear Cuffs</label>
+                    <label><input type="checkbox" value="earrings"> Earrings</label>
+                    <label><input type="checkbox" value="finger-rings"> Finger Rings</label>
+                    <label><input type="checkbox" value="neckwear"> Neckwear</label>
+                    <label><input type="checkbox" value="nose-pins"> Nose Pins</label>
+                    <label><input type="checkbox" value="pendants"> Pendants</label>
+                    <label><input type="checkbox" value="watch-jewelry"> Watch Jewelry</label>
+                    </div>
+    
+                <div class="filter-group">
+                    <div class="filter-title">Metals</div>
+                    <label><input type="checkbox" value="rose-gold"> Rose Gold</label>
+                    <label><input type="checkbox" value="yellow-gold"> Yellow Gold</label>
+                    <label><input type="checkbox" value="white-gold"> White Gold</label>
+                    <label><input type="checkbox" value="platinum"> Platinum</label>
+                    <label><input type="checkbox" value="sterling-silver"> Sterling Silver</label>
+                    <label><input type="checkbox" value="titanium"> Titanium</label>
+                    </div>
+    
+                <div class="filter-group">
+                    <div class="filter-title">Stones</div>
+                    <label><input type="checkbox" value="citrine"> Citrine</label>
+                    <label><input type="checkbox" value="diamond"> Diamond</label>
+                    <label><input type="checkbox" value="emerald"> Emerald</label>
+                    <label><input type="checkbox" value="moonstone"> Moonstone</label>
+                    <label><input type="checkbox" value="onyx"> Onyx</label>
+                    <label><input type="checkbox" value="pearl"> Pearl</label>
+                    <label><input type="checkbox" value="ruby"> Ruby</label>
+                    <label><input type="checkbox" value="sapphire"> Sapphire</label>
+                    <label><input type="checkbox" value="turquoise"> Turquoise</label>
+                    </div>
+    
+                <div class="filter-group">
+                    <div class="filter-title">Gender</div>
+                    <label><input type="checkbox" value="male"> Male</label>
+                    <label><input type="checkbox" value="female"> Female</label>
+                    <label><input type="checkbox" value="unisex"> Unisex</label>
+                </div>
+    
+                <div class="filter-group">
+                    <div class="filter-title">Collections</div>
+                    <label><input type="checkbox" value="artisan-echoes"> Artisan Echoes</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Ethereal Essence</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Festival Of Diamond</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Gemstone Journey</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Joy Of Dressing</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Pretty In Pink</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Radiant Reflections</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Tales Of Mystique</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Timeless Elegance</label>
+                    <label><input type="checkbox" value="ethereal-essence"> Vintage</label>
+                    </div>
+    
+                <div class="filter-group">
+                    <div class="filter-title">Price Range</div>
+                    <input type="number" placeholder="Min" id="min-price">
+                    <input type="number" placeholder="Max" id="max-price">
+                </div>
+    
+                <button class="apply-filters">View 657 Products</button>
+            </div>
+        </div>
+    
+    </div>    
+    <div class="shop-container">
+        <div class="product">   
+            <img src="product1.png" alt="Product 1" />
+            <h3>Rosy Refresh - Set of 3 Copper Wedding 18K Rose Gold Ring</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$299</strong>
+                    <span class="original-price">$399</span>
+                    <span class="discount">($100 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Rosy Refresh - Set of 3 Copper Wedding 18K Rose Gold Ring')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Rosy Refresh - Set of 3 Copper Wedding 18K Rose Gold Ring')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product">
+            <img src="product2.png" alt="Product 2" />
+            <h3>Arabian Style 18K Rose Gold Plated Earring</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$1249</strong>
+                    <span class="original-price">$1549</span>
+                    <span class="discount">($150 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Arabian Style 18K Rose Gold Plated Earring')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Arabian Style 18K Rose Gold Plated Earring')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">   
+            <img src="product3.png" alt="Product 3" />
+            <h3>European Zircon Limited Edition 18K Gold Bracelet</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$1099</strong>
+                    <span class="original-price">$1199</span>
+                    <span class="discount">($100 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('European Zircon Limited Edition 18K Gold Bracelet')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('European Zircon Limited Edition 18K Gold Bracelet')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">   
+            <img src="product4.png" alt="Product 4" />
+            <h3>Kundan Designer Piece 24K Yellow Gold Plated Bangles & Bracelet Set</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$2499</strong>
+                    <span class="original-price">$2649</span>
+                    <span class="discount">($150 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Kundan Designer Piece 24K Yellow Gold Plated Bangles & Bracelet Set')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Kundan Designer Piece 24K Yellow Gold Plated Bangles & Bracelet Set')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product5.png" alt="Product 5" />
+            <h3>Rosy Refresh - Set of 2 18K Rose & White Gold Earrings</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$2599</strong>
+                    <span class="original-price">$2699</span>
+                    <span class="discount">($100 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Rosy Refresh - Set of 2 18K Rose & White Gold Earrings')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Rosy Refresh - Set of 2 18K Rose & White Gold Earrings')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product6.png" alt="Product 6" />
+            <h3>24K Yellow Gold Plated Summer Collection Finger Rings for Couple Set</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$3249</strong>
+                    <span class="original-price">$3299</span>
+                    <span class="discount">($50 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('24K Yellow Gold Plated Summer Collection Finger Rings for Couple Set')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('24K Yellow Gold Plated Summer Collection Finger Rings for Couple Set')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product7.png" alt="Product 7" />
+            <h3>White Cubic Emerald Designer Collection Earing Set</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$2599</strong>
+                    <span class="original-price">$2799</span>
+                    <span class="discount">($200 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('White Cubic Emerald Designer Collection Earing Set')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('White Cubic Emerald Designer Collection Earing Set')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product8.png" alt="Product 8" />
+            <h3>Indian Designer 14K Yellow Gold Plated Neckwear Set</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$1599</strong>
+                    <span class="original-price">$1749</span>
+                    <span class="discount">($150 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Indian Designer 14K Yellow Gold Plated Neckwear Set')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Indian Designer 14K Yellow Gold Plated Neckwear Set')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product9.png" alt="Product 9" />
+            <h3>Golden Hour - 14K Yellow Gold Designer made Bracelet</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$2599</strong>
+                    <span class="original-price">$2699</span>
+                    <span class="discount">($100 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Golden Hour - 14K Yellow Gold Designer made Bracelet')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Golden Hour - 14K Yellow Gold Designer made Bracelet')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product10.png" alt="Product 10" />
+            <h3>Golden Hour - 14K Yellow Gold Designer Earrings</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$1849</strong>
+                    <span class="original-price">$1899</span>
+                    <span class="discount">($50 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Golden Hour - 14K Yellow Gold Designer Earrings')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Golden Hour - 14K Yellow Gold Designer Earrings')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product11.png" alt="Product 11" />
+            <h3>Dazzling Delights Lillian 18K Rose Gold Neckwear</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$4999</strong>
+                    <span class="original-price">$4199</span>
+                    <span class="discount">($200 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Dazzling Delights Lillian 18K Rose Gold Neckwear')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Dazzling Delights Lillian 18K Rose Gold Neckwear')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product12.png" alt="Product 12" />
+            <h3>Whimsical Wonders 24K Yellow Gold Ear Cuffs</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$2199</strong>
+                    <span class="original-price">$2249</span>
+                    <span class="discount">($50 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Whimsical Wonders 24K Yellow Gold Ear Cuffs')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Whimsical Wonders 24K Yellow Gold Ear Cuffs')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product13.png" alt="Product 13" />
+            <h3>Oceanic Opulence Lillian 22K Rose Gold Earrings & Neckwear</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$3599</strong>
+                    <span class="original-price">$3699</span>
+                    <span class="discount">($100 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Oceanic Opulence Lillian 22K Rose Gold Earrings & Neckwear')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Oceanic Opulence Lillian 22K Rose Gold Earrings & Neckwear')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product14.png" alt="Product 14" />
+            <h3>Mystic Allure 12K Rose Gold Neckwear</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$1249</strong>
+                    <span class="original-price">$1299</span>
+                    <span class="discount">($50 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Mystic Allure 12K Rose Gold Neckwear')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Mystic Allure 12K Rose Gold Neckwear')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product15.png" alt="Product 15" />
+            <h3>Glimmering Dreams 24K Solid Gold Couple Rings - Festive Collections</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$5999</strong>
+                    <span class="original-price">$6199</span>
+                    <span class="discount">($200 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Glimmering Dreams 24K Solid Gold Couple Rings - Festive Collections')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Glimmering Dreams 24K Solid Gold Couple Rings - Festive Collections')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product16.png" alt="Product 16" />
+            <h3>Bohemian Bliss 12K Yellow Gold Fall Collection Bracelet</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$1099</strong>
+                    <span class="original-price">$1249</span>
+                    <span class="discount">($150 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Bohemian Bliss 12K Yellow Gold Fall Collection Bracelet')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Bohemian Bliss 12K Yellow Gold Fall Collection Bracelet')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product17.png" alt="Product 17" />
+            <h3>Vintage Vibes Lillian Designer Limited Edition 24K Solid Gold Neckwear</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$8599</strong>
+                    <span class="original-price">$8699</span>
+                    <span class="discount">($100 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Vintage Vibes Lillian Designer Limited Edition 24K Solid Gold Neckwear')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Vintage Vibes Lillian Designer Limited Edition 24K Solid Gold Neckwear')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product18.png" alt="Product 18" />
+            <h3>24K Solid Gold Chain - Timeless Treasures Collection</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$3249</strong>
+                    <span class="original-price">$3299</span>
+                    <span class="discount">($50 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('24K Solid Gold Chain - Timeless Treasures Collection')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('24K Solid Gold Chain - Timeless Treasures Collection')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product19.png" alt="Product 19" />
+            <h3>Lillian 22K Yellow Gold Chain - Golden Hour Collection</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$4999</strong>
+                    <span class="original-price">$4799</span>
+                    <span class="discount">($200 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Lillian 22K Yellow Gold Chain - Golden Hour Collection')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Lillian 22K Yellow Gold Chain - Golden Hour Collection')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product">   
+            <img src="product20.png" alt="Product 20" />
+            <h3>Lillian Chic Minimalism 24K Rose Gold Neckwear Set for Couple</h3>
+            <div class="product-bottom">
+                <div class="price-section">
+                    <strong class="current-price">$8099</strong>
+                    <span class="original-price">$8249</span>
+                    <span class="discount">($150 off)</span>
+                </div>
+                <div class="product-actions">
+                    <button onclick="addToWishlist('Lillian Chic Minimalism 24K Rose Gold Neckwear Set for Couple')">
+                        <img src="Favorite_light.png">
+                    </button>
+                    <button onclick="addToBag('Lillian Chic Minimalism 24K Rose Gold Neckwear Set for Couple')">
+                        <img src="Bag_alt_light.png">
+                    </button>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    <div class="footer-actions">
+        <span>Showing 20 of 657</span>
+        <div class="divider"></div>
+        <button class="back-to-top" onclick="scrollToTop()">Back to Top <span class="arrow"><img src="Vector 9.png"></span></button>
+    </div>
+    
+        <div class="view-more">
+       <div class="line"></div>
+       <button>View More</button>
+       <div class="line"></div>
+    </div>
+
+    <img src="Gemstone.png" alt="Gemstone Collection" class="gemstone">
+
+<footer></footer>
+</body>
+</html>
