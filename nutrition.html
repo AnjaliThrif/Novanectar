@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Tracker</title>
+    <link rel="stylesheet" href="nutrition.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="nutrition-tracker">
+            <h2>Nutrition Tracker</h2>
+            <p>Track your daily food intake and monitor your nutrition.</p>
+            <div class="food-entry">
+                <label for="food-name">Food Name:</label>
+                <input type="text" id="food-name" placeholder="e.g., Apple, Upma">
+            </div>
+            <div class="food-entry">
+                <label for="calories">Calories:</label>
+                <input type="number" id="calories" placeholder="e.g., 150">
+            </div>
+            <div class="food-entry">
+                <label for="protein">Protein (g):</label>
+                <input type="number" id="protein" placeholder="e.g., 5">
+            </div>
+            <div class="food-entry">
+                <label for="carbs">Carbs (g):</label>
+                <input type="number" id="carbs" placeholder="e.g., 20">
+            </div>
+            <div class="food-entry">
+                <label for="fats">Fats (g):</label>
+                <input type="number" id="fats" placeholder="e.g., 8">
+            </div>
+            <button id="add-food">Add Food</button>
+            <div id="nutrition-summary">
+                <h3>Nutrition Summary</h3>
+                <ul id="food-list"></ul>
+                <p id="total-calories">Total Calories: 0 kcal</p>
+                <p id="total-protein">Total Protein: 0 g</p>
+                <p id="total-carbs">Total Carbs: 0 g</p>
+                <p id="total-fats">Total Fats: 0 g</p>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

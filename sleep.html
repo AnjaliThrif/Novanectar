@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <title>Sleep Tracker</title>
+    <link rel="stylesheet" href="sleep.css">
+    <script defer src="script.js"></script>
+<body>
+   <header></header>
+   <main>
+    <div class="sleep-tracker">
+        <h2>Sleep Tracker</h2>
+        <p>Monitor your sleep patterns and improve your rest with insights.</p><br>
+    <div class="sleep">
+        <label for="sleepTime">Sleep Time:</label><br><br>
+        <input type="time" id="sleepTime"><br>
+    </div>
+    <div class="sleep">
+        <label for="wakeTime">Wake Time:</label><br><br>
+        <input type="time" id="wakeTime"><br>   
+    </div>
+        <button onclick="calculateSleep()">Track Sleep</button>
+        <p id="sleepResult"></p>
+    </div>
+    <script src="sleep-tracker.js"></script>
+</body>
+<footer></footer>
