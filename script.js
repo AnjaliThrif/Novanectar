@@ -77,6 +77,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const quotes = [
+        "Believe in yourself and all that you are!",
+        "Every day is a fresh start.",
+        "You are stronger than you think.",
+        "Success is the sum of small efforts repeated daily.",
+        "Push yourself, because no one else is going to do it for you.",
+        "That awkward moment when your trainer says ‘10 more reps’ but you’re sure you’re about to die.",
+        "Working out is a lot like doing laundry… I hate it, but I love the results!",
+        "The only bad workout is the one that didn’t happen.",
+        "Fun fact: Running late counts as cardio, right?",
+        "Strange but real: The inventor of the treadmill actually meant it to be a punishment device. (And it still feels like one!)",
+        "One day or day one? You decide.",
+        "You don’t have to be extreme, just consistent.",
+        "Fitness is like a relationship – you can’t cheat and expect it to work.",
+        "Strive for progress, not perfection."
+    ];
+
+    // Pick a random quote
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote-text").innerText = randomQuote;
+
+    // Get popup element
+    const popup = document.getElementById("quote-popup");
+
+    // Add 'show' class after a small delay for animation
+    setTimeout(() => {
+        popup.classList.add("show");
+    }, 200);
+
+    // Close button event
+    document.getElementById("close-popup").addEventListener("click", function () {
+        popup.classList.remove("show"); // Apply fade-out effect
+        setTimeout(() => {
+            popup.style.display = "none"; // Hide completely after animation
+        }, 500);
+    });
+});
+
 // Weather API (using OpenWeatherMap)
 const apiKey = '5c9e8a205015f3b159f07ff93eb55f20'; // Replace with a secure method in production
 const city = 'Ahmedabad'; // Replace with dynamic user input if needed
