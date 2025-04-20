@@ -1,96 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidhbali Hospital</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="NovaNectar Services" class="logo">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#" id="find-jobs-link" class="active">Find Jobs</a></li>
+          <li><a href="#" id="post-job-link">Post a Job</a></li>
+          <li><a href="#" id="auth-link">Login/Register</a></li>
+          <li><a href="#" id="about-link">About You</a></li>
+          <li>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-checkbox" class="theme-toggle-input">
+                <label class="slider" for="theme-checkbox"></label>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Header Section -->
-    <header class="header">
-        <h1 class="logo">Sidhbali Hospital</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Your Health, Our Priority</h2>
-            <p>Providing quality healthcare with compassion and excellence.</p>
-            <a href="#contact" class="btn">Book an Appointment</a>
-        </div>
+  <main class="container">
+    <!-- Job Listings -->
+    <section id="job-listings">
+      <h2><i class="fas fa-list"></i> Available Jobs</h2>
+      <div class="filter-bar">
+        <input type="text" id="search-term" placeholder="Search job titles..." aria-label="Search Jobs" />
+        <select id="location-filter" aria-label="Filter by Location">
+          <option value="">All Locations</option>
+        </select>
+      </div>
+      <div class="job-list"></div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <div class="about-cards">
-            <div class="card">
-                <h3>Our Mission</h3>
-                <p>To deliver <strong>affordable, patient-centered healthcare</strong> by combining advanced medical technology with personalized treatment.</p>
-            </div>
-            <div class="card">
-                <h3>Our Vision</h3>
-                <p>To be a leading healthcare provider, known for excellence in medical care, patient satisfaction, and innovation in the healthcare industry.</p>
-            </div>
-        </div>
+    <!-- Job Details -->
+    <section id="job-details" class="hidden">
+      <h2><i class="fas fa-info-circle"></i> Job Details</h2>
+      <div id="job-info"></div>
+      <button id="apply-button" class="primary-button"><i class="fas fa-paper-plane"></i> Apply Now</button>
+      <p id="applicant-count"><i class="fas fa-users"></i> Applicants: <span id="applicant-number">0</span></p>
+      <button id="close-details" class="secondary-button"><i class="fas fa-arrow-left"></i> Back to Listings</button>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Our Specialties</h2>
-        <div class="service-cards">
-            <div class="card">
-                <h3>🏥 Cardiology</h3>
-                <p>Comprehensive heart care & advanced treatments.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Neurology</h3>
-                <p>Brain & nervous system expertise.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Orthopedics</h3>
-                <p>Advanced bone & joint care.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Pediatrics</h3>
-                <p>Specialized care for infants and children.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Maternity & Gynecology</h3>
-                <p>Safe & comfortable childbirth and women’s health.</p>
-            </div>
-            <div class="card">
-                <h3>🏥 Oncology</h3>
-                <p>Cancer diagnosis and treatment.</p>
-            </div>
+    <!-- Post Job Form -->
+    <section id="post-job-form" class="hidden">
+      <h2><i class="fas fa-plus-circle"></i> Post a New Job</h2>
+      <form id="new-job-form">
+        <div class="form-group">
+          <label for="title">Job Title:</label>
+          <input type="text" id="title" name="title" required />
         </div>
+        <div class="form-group">
+          <label for="company">Company:</label>
+          <input type="text" id="company" name="company" required />
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="primary-button"><i class="fas fa-upload"></i> Post Job</button>
+      </form>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
+    <!-- Auth Section -->
+    <section id="auth-section" class="hidden">
+      <div class="auth-container">
+        <h2><i class="fas fa-user-circle"></i> Login/Register</h2>
+        <div class="auth-toggle">
+          <button id="login-button" class="auth-button active">Login</button>
+          <button id="register-button" class="auth-button">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="login-email"><i class="fas fa-envelope"></i> Email:</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password"><i class="fas fa-lock"></i> Password:</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <button type="submit" class="primary-button"><i class="fas fa-sign-in-alt"></i> Login</button>
+          <div class="auth-options">
+            <a href="#">Forgot Password?</a>
+          </div>
         </form>
+
+        <!-- Register Form -->
+        <form id="register-form" class="auth-form hidden">
+          <div class="form-group">
+            <label for="register-email"><i class="fas fa-envelope"></i> Email:</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password"><i class="fas fa-lock"></i> Password:</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password"><i class="fas fa-lock"></i> Confirm Password:</label>
+            <input type="password" id="confirm-password" required />
+          </div>
+          <button type="submit" class="primary-button"><i class="fas fa-user-plus"></i> Register</button>
+        </form>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Sidhbali Hospital. All rights reserved.</p>
-    </footer>
+<!--About You-->
+    <section id="about-section" class="hidden">
+      <div class="about-me-container">
+        <h2>About You</h2>
+        <form id="aboutMeForm">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName">
+            </div>
+    
+            <div class="form-group">
+                <label for="headline">Professional Headline:</label>
+                <input type="text" id="headline" name="headline" placeholder="e.g., Experienced Software Engineer, Marketing Specialist">
+            </div>
+    
+            <div class="form-group">
+                <label for="summary">Summary:</label>
+                <textarea id="summary" name="summary" rows="5" placeholder="A brief overview of your professional background and goals."></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="skills">Skills (Comma Separated):</label>
+                <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript, Project Management, Communication">
+            </div>
+    
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+                <textarea id="experience" name="experience" rows="5" placeholder="Details about your work history and achievements."></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="education">Education:</label>
+                <textarea id="education" name="education" rows="3" placeholder="Your educational background."></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="linkedin">LinkedIn Profile (Optional):</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="Your LinkedIn profile URL">
+            </div>
+    
+            <div class="form-group">
+                <label for="website">Personal Website (Optional):</label>
+                <input type="url" id="website" name="website" placeholder="Your personal website URL">
+            </div>
+    
+            <button type="submit" class="save-button">Submit</button>
+            <div id="save-message" class="message"></div>
+        </form>
+    </div>
+        </section>
+  </main>
 
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Job Board Portal</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

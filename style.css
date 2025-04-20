@@ -1,116 +1,527 @@
+:root {
+  --bg-color: #f5f8fa;
+  --text-color: #1f1f1f;
+  --card-bg: #ffffff;
+  --header-bg: #ffffff;
+  --accent: #3498db;
+  --primary-button: #3498db;
+  --primary-button-hover: #2980b9;
+  --footer-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a; 
+  --text-color: #e0e0e0;
+  --card-bg: #2a2a2a; 
+  --header-bg: #2a2a2a; 
+  --accent: #3498db; 
+  --primary-button-hover: #0863a0; 
+  --footer-bg: #252c3f; 
+}
+
+html {
+  transition: background-color 1s ease, color 1ms ease;
+}
+
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  color: white;
+  padding-top: 150px;
 }
 
-header {
-  position: relative;
-  text-align: center;
-  padding: 100px 20px;
-  background: url('photo.jpg') no-repeat center center/cover;
-  height: 100vh;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-  z-index: 0;
-}
-
-header h1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 50px;
-  margin-bottom: 20px;
-  z-index: 1;
-  position: relative;
-}
-
-header div {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  margin-bottom: 20px;
-  z-index: 1;
-  position: relative;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: background-color 0.3s smooth;
-  z-index: 1;
-  position: relative;
-  scroll-behavior: smooth;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-section#contact {
-  padding: 50px 20px;
-  background-color: #f4f4f4;
-  color: black;
-  text-align: center;
-}
-
-section#contact h2 {
-  margin-bottom: 20px;
-}
-
-form {
-  max-width: 600px;
-  margin: 0 auto;
+/* NAVBAR */
+.navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-  gap: 15px;
+  padding: 5px 4px;
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-input, textarea {
-  width: 89%;
-  padding: 17px;
+/* CONTAINER */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HEADER */
+header {
+position: fixed; 
+top: 0;          
+left: 0;         
+width: 100%;      
+background-color: var(--header-bg);
+padding: 1.5em 0;
+text-align: center;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 9px;
+}
+
+.logo{
+  height: 80px;
+}
+
+header nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+align-items: center;
+}
+
+header nav ul li {
+margin-left: 1em;
+}
+
+header nav a {
+color: var(--text-color);
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s ease;
+font-size: 17px;
+}
+
+header nav a:hover,
+header nav a.active {
+color: var(--accent);
+}
+
+/* MAIN */
+main {
+  padding: 30px 0;
+}
+
+h2 {
+  color: var(--text-color);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.7em;
+  margin-bottom: 1.5em;
+  font-weight: 500;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 2em;
+  align-items: center;
+}
+
+.filter-bar input[type="text"],
+.filter-bar select {
+  padding: 0.8em;
   border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+/* JOB LISTINGS */
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.job-card,
+.job-details,
+#post-job-form {
+  background-color: var(--card-light);
+}
+
+.job-card {
+  background-color: c;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  flex-grow: 1;
+  width: 340px;
+}
+
+[data-theme="dark"] .job-card {
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 143, 171, 0.2);
+}
+
+[data-theme="dark"] .job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 143, 171, 0.2);
+}
+
+
+.job-card h3 {
+  margin-top: 0;
+  color: var(--text-color);
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.job-card p {
+  color:  #b6a9a9;
+  margin-bottom: 0.8em;
+}
+
+/* JOB DETAILS */
+.job-details {
+  margin-top: 3em;
+  padding: 2em;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.job-details h3 {
+  color: var(--text-color);
+  font-size: 1.8em;
+  margin-bottom: 0.8em;
+}
+
+.job-details p {
+  color: #555;
+  margin-bottom: 1em;
+}
+
+#applicant-count {
+  color: #777;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+/* POST JOB FORM */
+#post-job-form {
+  display: block;
+  margin-top: 1px;
+  margin-left: 358px;
+  padding: 2em;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  width: 40%;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* AUTH SECTION */
+.auth-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border: 1px solid #e0e0e0;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.auth-header h2 {
+  border-bottom: none;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  color: var(--text-color);
+}
+
+.auth-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5em;
+}
+
+.auth-button {
+  background: none;
+  border: none;
+  color: #777;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.auth-button:hover{
+  transform: translateY(-3px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+
+}
+.auth-button.active {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.auth-button.active:hover{
+  transform: translateY(-3px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.auth-button:focus {
+  outline: none;
+}
+
+.auth-form {
+  padding: 1.5em;
+}
+
+.auth-form h3 {
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+}
+
+.auth-form .form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
+.auth-form button[type="submit"].primary-button {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.1em;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* AUTH OPTIONS */
+.auth-options {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.auth-options a {
+  color: var(--primary-button);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.auth-options a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.primary-button {
+  background-color: var(--accent);
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
 }
 
 button {
-  width: 95%;
-  padding: 12px;
-  background-color: #28a745;
+  background-color: var(--primary-button);
   color: white;
+  padding: 0.8em 1.5em;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 3s ease, transform 0.2s ease;
+  font-size: 1em;
+  margin-right: 0.5em;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: var(--primary-button-hover);
 }
 
-@media (max-width: 768px) {
-  header {
-    padding: 50px 20px;
-    height: auto;
-  }
+.primary-button:hover {
+  background-color: var(--primary-button-hover);
+}
 
-  header h1 {
-    font-size: 28px;
-  }
+/* Theme Toggle Switch */
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-top: 5px;
+}
 
-  header div {
-    font-size: 16px;
-  }
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+position: absolute;
+content: '\f186'; 
+font-family: 'Font Awesome 5 Free'; 
+font-weight: 900; 
+font-size: 12px; 
+color: #333; 
+height: 16px;
+width: 16px;
+left: 2px;
+bottom: 2px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: .4s;
+background-color: transparent;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+/* Style for the sun icon when the checkbox is checked (dark mode) */
+input:checked + .slider::before {
+content: '\f185'; 
+color: #ffc107; 
+transform: translateX(20px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5em 0;
+  background-color: var(--footer-bg);
+  height: 70px;
+}
+
+footer .container {
+  font-size: 15px;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+.about-me-container, .about-me-display {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--card-bg, #ffffff); /* Uses your theme's card background */
+  color: var(--text-color, #1f1f1f); /* Uses your theme's text color */
+}
+
+.about-me-container h2, .about-me-display h2 {
+  margin-top: 0;
+  color: var(--accent, #14B8A6); /* Uses your theme's accent color */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: var(--bg-color, #f5f8fa); /* Uses your theme's background color */
+  color: var(--text-color, #1f1f1f); /* Uses your theme's text color */
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.save-button, .edit-button {
+  background-color: var(--primary-button, #10B981); /* Uses your theme's primary button color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.save-button:hover, .edit-button:hover {
+  background-color: var(--primary-button-hover, #34D399); /* Uses your theme's primary button hover color */
+}
+
+.message {
+  margin-top: 10px;
+  font-weight: bold;
 }
