@@ -23,7 +23,7 @@ body {
     .logo img {
     width: 80px;
     height: 91px;
-    margin-left: 50px;
+    margin-left: 15px;
     }
     
     .nav-links {
@@ -42,10 +42,50 @@ body {
     .nav-links a:hover {
     color: #008FAB;
     }
-    
+      
+    .sparkle-link, .active {
+        position: relative;
+        display: inline-block;
+        color: #008FAB;
+        text-decoration: none;
+        font-weight: bold;
+        overflow: hidden;
+        transition: color 0.3s ease-in-out;
+      }
+      
+      .sparkle-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.1)
+        );
+        transform: skewX(-20deg);
+      }
+      
+      .sparkle-link:hover::before {
+        animation: sparkle-slide 1s ease forwards;
+      }
+      
+      @keyframes sparkle-slide {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+      
     .icons {
     display: flex;
-    gap: 25px;
+    gap: 30px;
+    margin-right: 30px;
     }
     
     .search, .user, .favorite, .shopping {
@@ -53,4 +93,3 @@ body {
     height: 24px;
     cursor: pointer;
     }
-    
