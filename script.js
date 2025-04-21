@@ -14,164 +14,52 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('footer').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // === FILTER PANEL TOGGLE ===
     const filterBtn = document.querySelector('.filter-btn');
     const filterPanel = document.querySelector('.filter-panel');
-
-    filterBtn.addEventListener('click', function() {
-        filterPanel.style.display = filterPanel.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Close the panel when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!filterBtn.contains(event.target) && !filterPanel.contains(event.target)) {
-            filterPanel.style.display = 'none';
-        }
-    });
-
-    // Add event listeners for checkbox changes and price range inputs
-    // to handle filtering logic (you'll need to implement this part)
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const viewToggles = document.querySelectorAll('.view-toggle');
-    const productList = document.querySelector('.product-list');
-
-    // Load products from JSON
-    fetch('products.json')
-        .then(response => response.json())
-        .then(products => {
-            displayProducts(products);
+    if (filterBtn && filterPanel) {
+        filterBtn.addEventListener('click', function () {
+            filterPanel.style.display = filterPanel.style.display === 'block' ? 'none' : 'block';
         });
 
-    function displayProducts(products) {
-        products.forEach(product => {
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('product');
-
-            productDiv.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <div class="product-bottom">
-                    <div class="price-section">
-                        <strong class="current-price">$${product.price}</strong>
-                    </div>
-                    <div class="product-actions">
-                        <button class="wishlist-btn" data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" data-product-image="${product.image}">
-                            <img src="heart-icon.png" alt="Add to Wishlist">
-                        </button>
-                        <button class="bag-btn" data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" data-product-image="${product.image}">
-                            <img src="bag-icon.png" alt="Add to Bag">
-                        </button>
-                    </div>
-                </div>
-            `;
-
-            productList.appendChild(productDiv);
-        });
-
-        // Add event listeners for wishlist and bag buttons
-        const wishlistBtns = document.querySelectorAll('.wishlist-btn');
-
-        wishlistBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productId = this.dataset.productId;
-                const productName = this.dataset.productName;
-                const productPrice = this.dataset.productPrice;
-                const productImage = this.dataset.productImage;
-
-                let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-                wishlist.push({
-                    id: productId,
-                    name: productName,
-                    price: productPrice,
-                    image: productImage
-                });
-                localStorage.setItem('wishlist', JSON.stringify(wishlist));
-
-                showCustomAlert(`${productName} added to wishlist`);
-                // window.location.href = 'wishlist.html';
-            });
-        });
-    }
-
-    // Grid/List View Toggle
-    viewToggles.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            const view = this.dataset.view;
-
-            if (view === 'grid') {
-                productList.classList.remove('list-view');
-                productList.classList.add('grid-view');
-            } else if (view === 'list') {
-                productList.classList.remove('grid-view');
-                productList.classList.add('list-view');
+        document.addEventListener('click', function (event) {
+            if (!filterBtn.contains(event.target) && !filterPanel.contains(event.target)) {
+                filterPanel.style.display = 'none';
             }
         });
-    });
-
-    // Function to show the custom alert
-    function showCustomAlert(message) {
-        const modal = document.getElementById("customAlert");
-        const alertMessage = document.getElementById("alertMessage");
-        alertMessage.innerHTML = message;
-        modal.style.display = "block";
     }
 
-    // Function to close the custom alert
-    function closeCustomAlert() {
-        const modal = document.getElementById("customAlert");
-        modal.style.display = "none";
-    }
-
-    // Event listeners for close button and OK button
-    document.querySelector(".close").addEventListener("click", closeCustomAlert);
-    document.getElementById("okButton").addEventListener("click", closeCustomAlert);
-});
-
-let wishlist = [];
-let shoppingBag = [];
-
-function addToWishlist(product) {
-    if (!wishlist.includes(product)) {
-        wishlist.push(product);
-        alert(`${product} added to wishlist`);
-    } else {
-        alert(`${product} is already in your wishlist`);
-    }
-}
-
-function addToBag(product) {
-    if (!shoppingBag.includes(product)) {
-        shoppingBag.push(product);
-        alert(`${product} added to shopping bag`);
-    } else {
-        alert(`${product} is already in your bag`);
-    }
-}
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
+    // === VIEW TOGGLE ===
     const viewToggles = document.querySelectorAll('.view-toggle');
     const productList = document.querySelector('.product-list');
+    viewToggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+            const view = this.dataset.view;
+            productList.classList.toggle('list-view', view === 'list');
+            productList.classList.toggle('grid-view', view === 'grid');
+        });
+    });
 
-    // Load products from JSON
+    // === LOAD PRODUCTS ===
     fetch('products.json')
         .then(response => response.json())
         .then(products => {
             displayProducts(products);
         });
 
-    function displayProducts(products) {
+        function displayProducts(products) {
+            const productList = document.querySelector('.product-list');
+            
+            if (!productList) {
+                console.warn('⚠️ .product-list not found in the DOM');
+                return;
+            }
+        
+            productList.innerHTML = '';
         products.forEach(product => {
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
-
             productDiv.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
@@ -189,121 +77,152 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             `;
-
             productList.appendChild(productDiv);
         });
 
-        // Add event listeners for wishlist and bag buttons
+        setupWishlistButtons();
+    }
+
+    function setupWishlistButtons() {
         const wishlistBtns = document.querySelectorAll('.wishlist-btn');
         const wishlistDrawer = document.querySelector('.wishlist-drawer');
         const wishlistCount = document.getElementById('wishlistCount');
         const wishlistItems = document.getElementById('wishlistItems');
 
         wishlistBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productId = this.dataset.productId;
-                const productName = this.dataset.productName;
-                const productPrice = this.dataset.productPrice;
-                const productImage = this.dataset.productImage;
+            btn.addEventListener('click', function () {
+                const product = {
+                    id: this.dataset.productId,
+                    name: this.dataset.productName,
+                    price: this.dataset.productPrice,
+                    image: this.dataset.productImage
+                };
 
                 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-                wishlist.push({
-                    id: productId,
-                    name: productName,
-                    price: productPrice,
-                    image: productImage
-                });
+                wishlist.push(product);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
 
-                showCustomAlert(`${productName} added to wishlist`);
-                updateWishlistDrawer(); // Update the wishlist drawer
-                wishlistDrawer.classList.add('open'); // Open the drawer
+                showCustomAlert(`${product.name} added to wishlist`);
+                updateWishlistDrawer();
+                wishlistDrawer.classList.add('open');
             });
         });
 
-        // Function to update the wishlist drawer content
         function updateWishlistDrawer() {
             let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
             wishlistCount.textContent = wishlist.length;
-            wishlistItems.innerHTML = ''; // Clear previous content
+            wishlistItems.innerHTML = '';
 
-            wishlist.forEach(item => {
+            wishlist.forEach((item, index) => {
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('wishlist-item');
-
                 itemDiv.innerHTML = `
                     <img src="${item.image}" alt="${item.name}">
                     <div class="item-details">
                         <h3>${item.name}</h3>
                         <div class="price-section">
                             <strong class="current-price">$${item.price}</strong>
-                            <span class="original-price">$${item.originalPrice || (parseInt(item.price) + 100)}</span>
-                            <span class="discount">($${item.discount || 100} Off)</span>
+                            <span class="original-price">$${parseInt(item.price) + 100}</span>
+                            <span class="discount">($100 Off)</span>
                         </div>
                         <button class="move-to-bag">Move to Bag</button>
                     </div>
                     <button class="remove-item">X</button>
                 `;
-
                 wishlistItems.appendChild(itemDiv);
-            });
 
-            // Remove item functionality
-            document.querySelectorAll('.remove-item').forEach((button, index) => {
-                button.addEventListener('click', function() {
+                itemDiv.querySelector('.remove-item').addEventListener('click', () => {
                     wishlist.splice(index, 1);
-                    localStorage.setItem('wishlist', JSON.stringify(String(wishlist)));
-                    updateWishlistDrawer(); // Update the drawer after removing an item
+                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    updateWishlistDrawer();
                 });
-            });
 
-            // Move to bag functionality (you'll need to implement this)
-            document.querySelectorAll('.move-to-bag').forEach(button => {
-                button.addEventListener('click', function() {
-                    // Implement logic to move item to bag/orders
-                    // ...
+                itemDiv.querySelector('.move-to-bag').addEventListener('click', () => {
+                    moveToBag(item);
                 });
             });
         }
     }
 
-    // Grid/List View Toggle
-    viewToggles.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            const view = this.dataset.view;
+    // === CLOSE WISHLIST DRAWER WHEN CLICKING OUTSIDE ===
+    document.addEventListener('click', function (event) {
+        const wishlistDrawer = document.querySelector('.wishlist-drawer');
+        if (wishlistDrawer && !wishlistDrawer.contains(event.target) && !event.target.classList.contains('wishlist-btn')) {
+            wishlistDrawer.classList.remove('open');
+        }
+    });
 
-            if (view === 'grid') {
-                productList.classList.remove('list-view');
-                productList.classList.add('grid-view');
-            } else if (view === 'list') {
-                productList.classList.remove('grid-view');
-                productList.classList.add('list-view');
+    // === CART/SHOPPING BAG PAGE ITEM REMOVAL ===
+    const removeButtons = document.querySelectorAll('.remove-item');
+    const shoppingBagContainer = document.querySelector('.shopping-bag-container');
+    const emptyCartMessage = document.querySelector('.empty-cart-message');
+
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const productCard = event.currentTarget.closest('.item');
+            if (productCard) {
+                productCard.remove();
+                updateEmptyCartVisibility();
             }
         });
     });
 
-    // Function to show the custom alert
-    function showCustomAlert(message) {
-        const modal = document.getElementById("customAlert");
-        const alertMessage = document.getElementById("alertMessage");
+    function updateEmptyCartVisibility() {
+        const remainingCards = document.querySelectorAll('.item');
+        const emptyCartMessage = document.querySelector('.empty-cart-message');
+        
+        if (emptyCartMessage) {
+            emptyCartMessage.style.display = remainingCards.length === 0 ? 'block' : 'none';
+        }
+    }
+    
+
+    // === CUSTOM ALERT EVENT HANDLERS ===
+    document.querySelector(".close")?.addEventListener("click", closeCustomAlert);
+    document.getElementById("okButton")?.addEventListener("click", closeCustomAlert);
+});
+
+// Show Popup on Page Load
+window.onload = function () {
+    document.getElementById("popup")?.classList.remove("hidden");
+};
+
+// Login, Signup, Continue as Guest
+function login() {
+    window.location.href = "login.html";
+}
+function signup() {
+    window.location.href = "sign_up.html";
+}
+function continueAsGuest() {
+    document.getElementById("popup")?.classList.add("hidden");
+}
+
+// Scroll to Top
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Move to Bag Logic
+function moveToBag(item) {
+    let bagItems = JSON.parse(localStorage.getItem('bagItems')) || [];
+    bagItems.push(item);
+    localStorage.setItem('bagItems', JSON.stringify(bagItems));
+    alert(`${item.name} Moved to bag!`);
+}
+
+// Custom Alert
+function showCustomAlert(message) {
+    const modal = document.getElementById("customAlert");
+    const alertMessage = document.getElementById("alertMessage");
+    if (modal && alertMessage) {
         alertMessage.innerHTML = message;
         modal.style.display = "block";
     }
+}
 
-    // Function to close the custom alert
-    function closeCustomAlert() {
-        const modal = document.getElementById("customAlert");
-        modal.style.display = "none";
-    }
+function closeCustomAlert() {
+    const modal = document.getElementById("customAlert");
+    if (modal) modal.style.display = "none";
+}
 
-    // Event listeners for close button and OK button
-    document.querySelector(".close").addEventListener("click", closeCustomAlert);
-    document.getElementById("okButton").addEventListener("click", closeCustomAlert);
-
-    // Close wishlist drawer when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!document.querySelector('.wishlist-drawer').contains(event.target) && !event.target.classList.contains('wishlist-btn')) {
-            document.querySelector('.wishlist-drawer').classList.remove('open');
-        }
-    });
-});
