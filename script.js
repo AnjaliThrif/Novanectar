@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         jobDetailsSection.classList.add('hidden');
         postJobFormSection.classList.add('hidden');
         authSection.classList.add('hidden');
+        aboutSection.classList.add('hidden');
         document.querySelectorAll('header nav a').forEach(link => link.classList.remove('active'));
     }
 
@@ -147,16 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutLink.addEventListener('click', (e) => {
         e.preventDefault();
         hideAllSections();
-        aboutSection.classList.remove('hidden');
+        aboutSection.classList.remove('hidden'); 
         aboutLink.classList.add('active');
-    });
+        });
 
-    closeDetailsButton.addEventListener('click', () => {
-        hideAllSections();
-        jobListingsSection.classList.remove('hidden');
-        findJobsLink.classList.add('active');
-    });
-
+    
         // Handle form submission
     aboutMeForm.addEventListener('submit', function(event) {
         event.preventDefault();
