@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="orders.css" />
+  <title>Orders | Lillian Jewellers</title>
+</head>
+<body>
+  <header></header>
+
+  <div class="continue-shopping">
+    <img src="Vector.png" class="img" alt="Back Arrow Icon" />
+    <a href="shop.html" class="link">Continue Shopping</a>
+  </div>
+
+  <section class="shopping-section">
+    <div class="container">
+      <div class="box">
+        <h1><span class="highlight">Shopping Bag</span></h1>
+        <hr class="divider" />
+      </div>
+
+      <!-- Product Card 1 -->
+      <div class="cart-card">
+        <button class="remove-btn" onclick="removeCard(this)">✕</button>
+        <img src="product5.png" alt="18K Rose & White Gold Earrings" class="product-image" />
+        <div class="product-details">
+          <h3 class="product-title">Rosy Refresh - Set of 2 18K Rose & White Gold Earrings</h3>
+          <div class="selectors">
+            <div class="size-selector">
+              <label for="size1">Size:</label>
+              <select id="size1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+            <div class="qty-selector">
+              <label for="qty1">Qty:</label>
+              <div class="quantity-control">
+                <button class="qty-btn" onclick="decreaseQty(this)">−</button>
+                <span class="qty-display">1</span>
+                <button class="qty-btn" onclick="increaseQty(this)">+</button>
+              </div>
+            </div>
+            <div class="price-remove">
+              <span class="product-price">$2599</span>
+            </div>
+          </div>
+          <div class="btn">
+            <a href="wishlist.html">Save for later</a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Product Card 2 -->
+      <div class="cart-card">
+        <button class="remove-btn" onclick="removeCard(this)">✕</button>
+        <img src="product9.png" alt="14K Yellow Gold Bracelet" class="product-image" />
+        <div class="product-details">
+          <h3 class="product-title">Golden Hour - 14K Yellow Gold Designer made Bracelet</h3>
+          <div class="selectors">
+            <div class="size-selector">
+              <label for="size2">Size:</label>
+              <select id="size2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+            <div class="qty-selector">
+              <label for="qty2">Qty:</label>
+              <div class="quantity-control">
+                <button class="qty-btn" onclick="decreaseQty(this)">−</button>
+                <span class="qty-display">1</span>
+                <button class="qty-btn" onclick="increaseQty(this)">+</button>
+              </div>
+            </div>
+            <div class="price-remove">
+              <span class="product-price">$2599</span>
+            </div>
+          </div>
+          <div class="btn">
+            <a href="wishlist.html">Save for later</a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+    </div>
+
+  <!-- Boutique Pickup Section -->
+  <section class="pickup-info">
+    <h1>The Lillian Experience</h1>
+    <hr class="divider1" />
+    <h2 class="pickup-title">Boutique Pickup</h2>
+    <p class="pickup-subtitle">Shop Locally, Pick Up Conveniently!</p>
+    <p class="pickup-text">
+      We’re excited to offer a boutique pickup option for our customers. Enjoy the convenience of shopping online and picking up your jewelry at our store.<br><br>
+    <p class="how"> How It Works: </p> <br>
+    <ol class="pickup-steps">
+      <li>Place Your Order: Browse our collection and select the items you wish to purchase. During checkout, choose the "Pickup at Store" option.</li><br>
+      <li>Receive Confirmation: After your order is processed, you'll receive a confirmation email letting you know when your items are ready for pickup.</li><br>
+      <li>Visit Our Boutique: Come to our store at your preferred location during our business hours to collect your order. Please bring your confirmation email and a valid ID.</li> <br>
+    </ol>
+    <p class="pickup">
+      If you need assistance or have questions about your order, feel free to call us at  <span class="tele">+1 (226) 152-4722</span>
+    </p>
+</p>
+    <hr class="divider1" />
+  </section>
+
+  <!-- Gift Section -->
+  <section class="gift-section">
+    <div class="gift">
+      <label>
+        <input type="checkbox" class="gift-checkbox" />
+        Include Gift Wrapping for this order
+      </label>
+      <div class="gift-note">
+        <img src="Gift.png" class="gift-img" alt="Gift Wrap Icon" />Add Gift Note:
+      </div>
+    </div>
+    <textarea id="gift-note" placeholder="Customize your gift with a special note to convey your sentiments..."></textarea>
+  </section>
+
+
+  <!-- Empty Cart Message -->
+  <div class="empty-cart-message" style="display: none;">
+    Your shopping bag is empty.
+  </div>
+</section>
+
+  <script src="script.js"></script>
+  <footer></footer>
+</body>
+</html>

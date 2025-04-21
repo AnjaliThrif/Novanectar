@@ -1,0 +1,99 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.wishlist-container{
+  margin-bottom: 20px;
+  margin-left: 120px;
+}
+
+.continue-shopping {
+  display: flex;
+  align-items: center;
+  margin: 50px 0 25px 70px;
+  gap: 5px;
+}
+
+.continue-shopping img {
+  width: 20px;
+  height: 19px;
+}
+
+.link {
+  color: black;
+  font-size: 17px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  margin-left: -1150px;
+}
+
+h3{
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.highlight{
+  color: #008FAB;
+  font-size: 45px;
+  margin-left: -160px;
+}
+
+
+p{
+  font-size: 15px;
+  margin-left: -354px;
+  color: #4D4C4C;
+}
+
+.para{
+  margin-left: -800px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-left: 10px;
+  margin-top: 60px;
+}
+
+.product-card {
+  width: 300px;
+  padding: 5px;
+  text-align: center;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 15px;
+  margin: 0.5rem 0;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.discount {
+  color: red;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.move-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
